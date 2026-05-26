@@ -16,7 +16,6 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('hero')
   const { scrollYProgress } = useScroll()
 
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
   const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0])
 
   useEffect(() => {
@@ -37,12 +36,11 @@ export default function App() {
   }, [])
 
   return (
-    <div className="relative min-h-screen bg-black overflow-x-hidden">
+    <div className="relative min-h-screen bg-black">
       <motion.div
         className="fixed inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at 50% 0%, #1e3a5f 0%, transparent 60%)',
-          y: backgroundY,
+          background: 'radial-gradient(ellipse at 50% -30%, #1e3a5f 0%, transparent 60%)',
           opacity,
         }}
       />

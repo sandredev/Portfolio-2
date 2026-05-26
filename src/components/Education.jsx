@@ -52,12 +52,12 @@ export default function Education() {
                 <item.icon size={24} />
               </div>
               <div className="flex-1">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-white">{item.title}</h3>
-                    <p className="text-primary font-medium">{item.subtitle}</p>
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-1 sm:gap-4">
+                  <div className="min-w-0">
+                    <h3 className="text-lg sm:text-xl font-bold text-white break-words">{item.title}</h3>
+                    <p className="text-sm sm:text-base text-primary font-medium">{item.subtitle}</p>
                   </div>
-                  <span className="text-sm text-gray-500 whitespace-nowrap bg-white/5 px-3 py-1 rounded-lg">
+                  <span className="text-xs sm:text-sm text-gray-500 whitespace-nowrap bg-white/5 px-2.5 sm:px-3 py-1 rounded-lg self-start">
                     {item.period}
                   </span>
                 </div>

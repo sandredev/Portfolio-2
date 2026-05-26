@@ -64,7 +64,13 @@ export default function Navbar({ activeSection }) {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    const timeout = setTimeout(() => setOpen(false), 1000)
+                    document.addEventListener('scrollend', () => {
+                      clearTimeout(timeout)
+                      setOpen(false)
+                    }, { once: true })
+                  }}
                   className={`block px-3 py-2 rounded-lg text-sm font-medium transition-all ${
                     activeSection === link.href.slice(1)
                       ? 'text-white bg-primary/20'
